@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Uke_1/" />
+  <Folder Name="/Uke_1/Kodestil_Kodestandard/">
+    <Project Path="Uke_1/Kodestil_Kodestandard/app/app.csproj" />
+  </Folder>
+</Solution>
