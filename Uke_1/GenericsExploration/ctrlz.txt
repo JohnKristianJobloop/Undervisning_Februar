@@ -1,0 +1,7 @@
+hei på deg!
+
+skriver noe til en slags stack (samling av ting eller eventer som skjer.)
+
+kan poppe ting av stacken via ctrl z
+
+kan pushe ting tilbake i stacken via ctrl y

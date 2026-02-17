@@ -1,5 +1,7 @@
 <Solution>
-  <Folder Name="/Uke_1/" />
+  <Folder Name="/Uke_1/">
+    <Project Path="Uke_1/GenericsExploration/GenericsExploration.csproj" />
+  </Folder>
   <Folder Name="/Uke_1/Kodestil_Kodestandard/">
     <Project Path="Uke_1/Kodestil_Kodestandard/app/app.csproj" />
   </Folder>

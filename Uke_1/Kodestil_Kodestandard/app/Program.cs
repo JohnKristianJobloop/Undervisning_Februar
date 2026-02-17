@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Hello, world!");
+﻿using app.Models;
+
+Console.WriteLine("Hello, world!");
 
 int globalInt;
 
@@ -63,3 +65,25 @@ Dictionary<string, int> nameAndAgeAsEmpty = [];
 
 
 Console.WriteLine(globalInt);
+
+
+var personA = new Person(123, "John");
+
+var personB = new Person(123, "John");
+
+Console.WriteLine(personA.GetHashCode() == personB.GetHashCode());
+Console.WriteLine(personA.GetHashCode());
+Console.WriteLine(personB.GetHashCode());
+
+var test = new Test();
+Console.WriteLine(test.GetHashCode());
+
+int a = 5;
+int b = 5;
+Console.WriteLine(a.GetHashCode() == b.GetHashCode());
+Console.WriteLine(a.GetHashCode());
+
+public class Test
+{
+    
+}
