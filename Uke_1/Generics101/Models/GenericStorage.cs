@@ -15,11 +15,9 @@ public class GenericStorage<T> : IGenericStorage<T>
 
 //La oss si du lager en generic storage av typen int.
 //Compileren lager så følgende klasse for deg. 
-
 public class GenericStorageInt
 {
     private int _value;
     public void Set(int val) => _value = val;
     public int Get() => _value;
-    
 }
