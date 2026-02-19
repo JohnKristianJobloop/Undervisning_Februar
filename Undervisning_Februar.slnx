@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/Uke_1/">
+    <Project Path="Uke_1/Generics101/Generics101.csproj" />
     <Project Path="Uke_1/GenericsExploration/GenericsExploration.csproj" />
   </Folder>
   <Folder Name="/Uke_1/Kodestil_Kodestandard/">
