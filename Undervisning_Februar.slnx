@@ -6,4 +6,10 @@
   <Folder Name="/Uke_1/Kodestil_Kodestandard/">
     <Project Path="Uke_1/Kodestil_Kodestandard/app/app.csproj" />
   </Folder>
+  <Folder Name="/Uke_2/">
+    <Project Path="Uke_2/AddingProjectExample/AddingProjectExample.csproj" />
+    <Project Path="Uke_2/GenericCalculator/GenericCalculator.csproj" />
+    <Project Path="Uke_2/GenericCalculatorConsumer/GenericCalculatorConsumer.csproj" />
+    <Project Path="Uke_2/GenericCalculatorTest/GenericCalculatorTest.csproj" />
+  </Folder>
 </Solution>

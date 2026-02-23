@@ -9,6 +9,8 @@ intStorage.Set(10);
 
 intStorage.Display();
 
+var typeStorage = new GenericStorage<sbyte>();
+
 var stringStorage = new GenericStorage<string>();
 
 stringStorage.Set("John");
