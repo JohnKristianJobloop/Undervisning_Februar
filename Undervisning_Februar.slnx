@@ -11,5 +11,6 @@
     <Project Path="Uke_2/GenericCalculator/GenericCalculator.csproj" />
     <Project Path="Uke_2/GenericCalculatorConsumer/GenericCalculatorConsumer.csproj" />
     <Project Path="Uke_2/GenericCalculatorTest/GenericCalculatorTest.csproj" />
+    <Project Path="Uke_2/SOLID_Exploration/SOLID_Exploration.csproj" />
   </Folder>
 </Solution>
