@@ -16,5 +16,6 @@
   <Folder Name="/Uke_3/">
     <Project Path="Uke_3/Async_programmering/Async_programmering.csproj" />
     <Project Path="Uke_3/HTTP_Client/HTTP_Client.csproj" />
+    <Project Path="Uke_3/HTTP_Listener/HTTP_Listener.csproj" />
   </Folder>
 </Solution>
