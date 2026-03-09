@@ -18,4 +18,8 @@
     <Project Path="Uke_3/HTTP_Client/HTTP_Client.csproj" />
     <Project Path="Uke_3/HTTP_Listener/HTTP_Listener.csproj" />
   </Folder>
+  <Folder Name="/Uke_4/">
+    <Project Path="Uke_4/AspNetCoreIntro/AspNetCoreIntro.csproj" />
+    <Project Path="Uke_4/WebServerViaHttpListener/WebServerViaHttpListener.csproj" />
+  </Folder>
 </Solution>
