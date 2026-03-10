@@ -1,3 +1,8 @@
+using System.Text;
+using AspNetCoreIntro.Models.Dto;
+using AspNetCoreIntro.Models.Entities;
+using AspNetCoreIntro.Models.Repository;
+using Microsoft.AspNetCore.Mvc;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSingleton<TodoItemRepository>();
 
 var app = builder.Build();
 
@@ -20,24 +26,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
 
 app.MapGet("/hello", () =>
 {
@@ -51,11 +39,29 @@ app.MapGet("/verifyAge/{age:int}", (int age) =>
 });
 
 
+//TODO ITEM ENDPOINTS!
+
+app.MapGet("/todoitems", (TodoItemRepository repository) => repository.Get());
+
+app.MapGet("/todoitems/{id:guid}", (Guid id, TodoItemRepository repository) => repository.Get(id));
+
+app.MapPost("/todoitems", ([FromBody]CreateTodoItemDto item, TodoItemRepository repository) =>
+{
+    try
+    {
+        var newItem = repository.AddItem(item);
+        return Results.Created($"/todoitems/{newItem.Id}", newItem);
+    } catch (ArgumentNullException ex)
+    {
+        return Results.BadRequest(ex.Message);
+    }
+});
+
+app.MapDelete("/todoitem/{id:guid}", (Guid id, TodoItemRepository repository) => repository.Delete(id));
+
+app.MapPut("/todoitem", ([FromBody]TodoItem item, TodoItemRepository repository) => Results.Created($"/todoitems/{item.Id}", repository.Put(item)));
+
 app.UseStaticFiles();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
