@@ -1,4 +1,5 @@
 using System.Text;
+using AspNetCoreIntro.Extensions;
 using AspNetCoreIntro.Models.Dto;
 using AspNetCoreIntro.Models.Entities;
 using AspNetCoreIntro.Models.Repository;
@@ -11,7 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSingleton<TodoItemRepository>();
+
+builder.Services.AddTodoItemRepository();
+
+builder.Services.AddControllers();
+
 
 var app = builder.Build();
 
@@ -25,6 +30,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapControllers();
 
 
 app.MapGet("/hello", () =>

@@ -10,9 +10,7 @@ public class TodoItemRepository
 
     public IEnumerable<TodoItem> Get() => _todoItems;
     public TodoItem? Get(Guid id) => _todoItems.FirstOrDefault(item => item.Id == id);
-    //Mangler validering, bør refaktores.
-    //Her kan vi potensielt ende opp, med to items med samme ID. 
-    //Vi leverer heller ikke fra oss resultat om arbeid OK eller ikke. 
+ 
     public TodoItem AddItem(CreateTodoItemDto item){
         if (string.IsNullOrWhiteSpace(item.Name)) throw new ArgumentNullException(nameof(item.Name));
         if (string.IsNullOrWhiteSpace(item.Description)) throw new ArgumentNullException(nameof(item.Description));
